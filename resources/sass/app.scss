@@ -67,28 +67,84 @@
     width: calc(100vw - var(--sidebar-width));
     height: 100vh;
     background-color: #F2F6FA;
-    .top-menu{
+    //.top-menu{
+    //    background-color: white;
+    //    height: 59px;
+    //    display: flex;
+    //    justify-content: space-between;
+    //    .top-menu__nav{
+    //        .top-menu__list{
+    //            display: flex;
+    //            list-style: none;
+    //            .top-menu__item{
+    //                height: 59px;
+    //                margin-left: 17px;
+    //                .top-menu__link{
+    //
+    //                }
+    //            }
+    //        }
+    //    }
+    //    .top-menu__user-info{
+    //        color: #A6AFB8;
+    //        font-size: 11px;
+    //        font-family: Roboto, sans-serif;
+    //        font-weight: 400;
+    //        line-height: 11px;
+    //        word-wrap: break-word;
+    //        margin-top: 25px;
+    //        margin-right: 31px;
+    //    }
+    //}
+    .top-menu {
         background-color: white;
         height: 59px;
         display: flex;
         justify-content: space-between;
-        .top-menu__nav{
-            .top-menu__list{
-                .top-menu__item{
-                    .top-menu__link{
+        align-items: center; /* Выравнивание по центру по вертикали */
 
+        .top-menu__nav {
+            .top-menu__list {
+                display: flex;
+                list-style: none;
+
+                .top-menu__item {
+                    box-sizing: border-box;
+                    height: 59px;
+                    margin-left: 17px;
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 4px solid transparent;
+                    text-transform: uppercase;
+
+                    .top-menu__link {
+                        text-decoration: none;
+                        color: #6E6E6F;
+                        font-size: 11px;
+                        font-family: Roboto, sans-serif;
+                        font-weight: 400;
+                        line-height: 11px;
+                        word-wrap: break-word
+
+                    }
+                    &--active {
+                        color: red;
+                        border-bottom-color: red; /* Цвет красной полоски */
+                        .top-menu__link {
+                            color: #ED1C24;
+                        }
                     }
                 }
             }
         }
-        .top-menu__user-info{
-            color: #A6AFB8;
+
+        .top-menu__user-info {
+            color: #a6afb8;
             font-size: 11px;
             font-family: Roboto, sans-serif;
             font-weight: 400;
             line-height: 11px;
             word-wrap: break-word;
-            margin-top: 25px;
             margin-right: 31px;
         }
     }

@@ -37,7 +37,8 @@
             <div class="top-menu">
                 <nav class="top-menu__nav">
                     <ul class="top-menu__list">
-                        <li class="top-menu__item"><a href="#" class="top-menu__link"></a>Продукты</li>
+                        <li class="top-menu__item top-menu__item--active"><a href="#" class="top-menu__link">Продукты</a></li>
+                        <li class="top-menu__item"><a href="#" class="top-menu__link">Заказы</a></li>
                     </ul>
                 </nav>
                 <div class="user-info top-menu__user-info">
