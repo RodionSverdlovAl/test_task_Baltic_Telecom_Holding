@@ -46,7 +46,38 @@
                 </div>
             </div>
             <div class="content">
-                @yield('content') <!-- Вставляем главную область -->
+                <table class="table">
+                    <tr class="table__row table__row--header">
+                        <th class="table__cell">Артикул</th>
+                        <th class="table__cell">Название</th>
+                        <th class="table__cell">Статус</th>
+                        <th class="table__cell">Атрибуты</th>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">12345</td>
+                        <td class="table__cell">Продукт 1</td>
+                        <td class="table__cell">Активен</td>
+                        <td class="table__cell">
+                            <ul class="table__attribute-list">
+                                <li class="table__attribute">Размер: 4</li>
+                                <li class="table__attribute">Цвет: черный</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr class="table__row">
+                        <td class="table__cell">12345</td>
+                        <td class="table__cell">Продукт 1</td>
+                        <td class="table__cell">Активен</td>
+                        <td class="table__cell">
+                            <ul class="table__attribute-list">
+                                <li class="table__attribute">Размер: 4</li>
+                                <li class="table__attribute">Цвет: черный</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <!-- Другие строки таблицы здесь -->
+                </table>
+
             </div>
         </div>
     </main>
