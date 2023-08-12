@@ -3,23 +3,22 @@
     height: 100vh;
     background-color: #374050;
 
-    .sidebar__header {
+    &__header {
         display: flex;
 
-        .sidebar__header-logo-wrapper {
+        &-logo-wrapper {
             width: 79px;
             height: 59px;
             background: white;
             border-bottom-right-radius: 20px;
             position: relative;
-
-            .sidebar__header-logo {
-                margin-top: 18px;
-                margin-left: 13px;
-            }
+        }
+        &-logo {
+            margin-top: 18px;
+            margin-left: 13px;
         }
 
-        .sidebar__header-text {
+        &-text {
             color: white;
             font-size: 11px;
             font-family: Roboto, sans-serif;
@@ -33,25 +32,22 @@
         }
     }
 
-    .sidebar__menu {
+    &__menu {
         margin-top: 13px;
         margin-left: 34px;
 
         .menu {
-            .menu__list {
+            &__list {
                 list-style: none;
-
-                .menu__item {
-                    .menu__link {
-                        color: rgba(255, 255, 255, 0.70);
-                        font-size: 12px;
-                        font-family: Roboto, sans-serif;
-                        font-weight: 400;
-                        line-height: 11px;
-                        word-wrap: break-word;
-                        text-decoration: none;
-                    }
-                }
+            }
+            &__link {
+                color: rgba(255, 255, 255, 0.70);
+                font-size: 12px;
+                font-family: Roboto, sans-serif;
+                font-weight: 400;
+                line-height: 11px;
+                word-wrap: break-word;
+                text-decoration: none;
             }
         }
     }

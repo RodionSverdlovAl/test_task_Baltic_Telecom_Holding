@@ -1,6 +1,7 @@
 @import "sidebar";
 @import "top-menu";
 @import "table";
+@import "modal-window";
 
 * {
     margin: 0;
@@ -19,6 +20,29 @@
     width: calc(100vw - var(--sidebar-width));
     height: 100vh;
     background-color: #F2F6FA;
+}
+
+.content{
+    position: relative;
+    &-button{
+        position: absolute;
+        top: 17px;
+        right: 17px;
+    }
+}
+
+.button{
+    cursor: pointer;
+    background: #0FC5FF;
+    border-radius: 6px;
+    padding: 10px 42px;
+    border: none;
+    color: white;
+    font-size: 11px;
+    font-family: Roboto, sans-serif;
+    font-weight: 500;
+    line-height: 11px;
+    word-wrap: break-word
 }
 
 

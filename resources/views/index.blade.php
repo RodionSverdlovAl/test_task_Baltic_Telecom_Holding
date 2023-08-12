@@ -77,12 +77,30 @@
                     </tr>
                     <!-- Другие строки таблицы здесь -->
                 </table>
-
+                <div class="content-button">
+                    <button class="button" id="openModalButton">Добавить</button>
+                </div>
             </div>
         </div>
     </main>
+
+    <div class="modal" id="addProductModal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <h2 class="modal__title">Добавить продукт</h2>
+            <form class="modal__form">
+                <label class="modal__label">Название продукта</label>
+                <input type="text" class="modal__input" name="productName" required>
+                <label class="modal__label">Цена</label>
+                <input type="number" class="modal__input" name="productPrice" required>
+                <button type="submit" class="button modal__submit-button">Добавить</button>
+            </form>
+            <button class="modal__close-button" id="closeModalButton">×</button>
+        </div>
+    </div>
+
 </div>
 
-
+<script src="{{asset('js/app.js')}}"></script>
 </body>
 </html>
