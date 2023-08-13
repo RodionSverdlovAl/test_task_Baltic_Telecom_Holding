@@ -1,0 +1,58 @@
+.custom-select {
+    position: relative;
+    width: 473px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    font-size: 11px;
+    font-family: Roboto, sans-serif;
+    font-weight: 300;
+    line-height: 11px;
+    word-wrap: break-word;
+
+    &.open {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .selected-option {
+        background-color: white;
+        padding: 10px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        border-bottom: none;
+        box-sizing: border-box;
+
+        &.open {
+            border-radius: 5px 5px 0 0;
+            border-bottom: none;
+        }
+    }
+
+    .options {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        border: none;
+        border-radius: 0 0 5px 5px;
+        list-style: none;
+        padding: 0;
+
+        li {
+            padding: 10px 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: #50A9FC;
+            }
+
+            &:last-child {
+                border-radius: 0 0 5px 5px;
+            }
+        }
+    }
+}
