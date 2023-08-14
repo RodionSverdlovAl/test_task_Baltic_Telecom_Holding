@@ -47,34 +47,30 @@
             </div>
             <div class="content">
                 <table class="table">
-                    <tr class="table__row table__row--header">
-                        <th class="table__cell">Артикул</th>
-                        <th class="table__cell">Название</th>
-                        <th class="table__cell">Статус</th>
-                        <th class="table__cell">Атрибуты</th>
-                    </tr>
-                    <tr class="table__row">
-                        <td class="table__cell">12345</td>
-                        <td class="table__cell">Продукт 1</td>
-                        <td class="table__cell">Активен</td>
-                        <td class="table__cell">
-                            <ul class="table__attribute-list">
-                                <li class="table__attribute">Размер: 4</li>
-                                <li class="table__attribute">Цвет: черный</li>
-                            </ul>
-                        </td>
-                    </tr>
-                    <tr class="table__row">
-                        <td class="table__cell">12345</td>
-                        <td class="table__cell">Продукт 1</td>
-                        <td class="table__cell">Активен</td>
-                        <td class="table__cell">
-                            <ul class="table__attribute-list">
-                                <li class="table__attribute">Размер: 4</li>
-                                <li class="table__attribute">Цвет: черный</li>
-                            </ul>
-                        </td>
-                    </tr>
+                    <thead>
+                        <tr class="table__row table__row--header">
+                            <th class="table__cell">Артикул</th>
+                            <th class="table__cell">Название</th>
+                            <th class="table__cell">Статус</th>
+                            <th class="table__cell">Атрибуты</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($products as $product)
+                        <tr class="table__row">
+                            <td class="table__cell">{{$product->article}}</td>
+                            <td class="table__cell">{{$product->name}}</td>
+                            <td class="table__cell">{{$product->status}}</td>
+                            <td class="table__cell">
+                                <ul class="table__attribute-list">
+                                    @foreach($product->attributes as $name => $value)
+                                        <li class="table__attribute">{{$name . ': ' . $value}}</li>
+                                    @endforeach
+                                </ul>
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
                     <!-- Другие строки таблицы здесь -->
                 </table>
                 <div class="content-button">
