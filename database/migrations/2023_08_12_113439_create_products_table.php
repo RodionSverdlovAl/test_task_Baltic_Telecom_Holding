@@ -14,8 +14,13 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->id();
+            $table->id(); // Auto-increment, unsigned integer (uint) ID
+            $table->string('article')->unique(); // VARCHAR(255), unique index
+            $table->string('name'); // VARCHAR(255)
+            $table->string('status'); // VARCHAR(255)
+            $table->jsonb('attributes')->nullable(); // JSONB
             $table->timestamps();
+            $table->softDeletes(); // Soft deletes column
         });
     }
 

@@ -20,12 +20,3 @@ $('.custom-select').each(function() {
         });
     });
 });
-
-$('#myForm').submit(function(event) {
-    event.preventDefault();
-    const formData = new FormData($(this)[0]);
-    const selectedOptionValue = formData.get('selectedOptionValue');
-    console.log('Значение для отправки:', selectedOptionValue);
-
-    // Здесь вы можете выполнить отправку данных на сервер
-});
