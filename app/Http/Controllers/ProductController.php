@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Product\StoreRequest;
+use App\Jobs\SendProductCreatedNotification;
+use App\Notifications\ProductCreatedNotification;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Facades\Queue;
 use App\Models\Product;
 use App\Services\ProductService;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Config;
 use Illuminate\View\View;
 use Symfony\Component\HttpFoundation\Response as ResponseAlias;
 use \Illuminate\Http\JsonResponse;
@@ -43,6 +47,9 @@ class ProductController extends Controller
     {
         $product = $request->validated();
         if($this->service->create($product)) {
+            $email = config('products.email');
+            Notification::route('mail', $email)
+                ->notify((new ProductCreatedNotification())->onQueue('notifications'));
             return response()->json([
                 'message' => 'Товар '. $product['article'] .' успешно создан.',
             ], ResponseAlias::HTTP_OK);

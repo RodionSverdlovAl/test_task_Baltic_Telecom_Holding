@@ -2091,11 +2091,11 @@ $(document).ready(function () {
       },
       success: function success(response) {
         // Обработка успешного ответа от сервера
-        console.log('Товар успешно создан:', response);
-        // Здесь вы можете выполнить дополнительные действия,
-        // например, очистить форму или обновить список товаров
+        $('#article').val('');
+        $('#name').val('');
+        $('#addProductModal').css('display', 'none');
+        alert(response.message);
       },
-
       error: function error(_error) {
         // Обработка ошибки
         console.error('Ошибка при создании товара:', _error);

@@ -29,9 +29,10 @@ $(document).ready(function() {
             },
             success: function(response) {
                 // Обработка успешного ответа от сервера
-                console.log('Товар успешно создан:', response);
-                // Здесь вы можете выполнить дополнительные действия,
-                // например, очистить форму или обновить список товаров
+                $('#article').val('');
+                $('#name').val('');
+                $('#addProductModal').css('display', 'none');
+                alert(response.message);
             },
             error: function(error) {
                 // Обработка ошибки

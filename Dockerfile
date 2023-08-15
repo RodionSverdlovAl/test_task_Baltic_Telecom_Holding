@@ -1,6 +1,8 @@
 # Используем образ PHP с поддержкой FPM
 FROM php:8.1.0-fpm
 
+
+
 # Установка зависимостей
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -43,7 +45,8 @@ RUN php artisan key:generate
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Открытие порта
-EXPOSE 9000
+# Открытие портов для PHP-FPM и MailHog
+EXPOSE 9000 8025
 
 # Запуск PHP-FPM
 CMD ["php-fpm"]
